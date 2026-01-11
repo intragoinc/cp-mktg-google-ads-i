@@ -1,242 +1,124 @@
----
-title: "01_01 Executive Context"
-version: "v1.0"
-status: "Complete"
-owner: "Cal Preserving"
-tone: "Operational / PM"
----
-
-# Executive Context
-
-This document provides the top-level context for the Google Ads initiative. It describes the business motivations, high-level objectives, and phased rollout approach. Subsequent documents provide segmentation, architecture, campaign master specification, landing page specification, and tracking detail.
+# Cal Preserving Google Ads Initiative  
+## Part 1.1 — Executive & Context Layer
 
 ---
 
-## 1. Business Context
+### 1. Purpose
 
-Cal Preserving operates in exterior wood maintenance with service focus on:
-
-- Deck refinishing and repair
-- Wood siding refinishing and repair
-- Exterior wood structures (fence, trellis, pergola, outdoor furniture)
-- Pressure washing (hardscape)
-- Catch-all exterior wood restoration
-
-Demand varies by season and geography. Job sizes vary by surface and buyer type. Commercial work has higher ticket value. Residential represents most inbound volume.
+This document defines the **executive context and rationale** for the Google Ads initiative. It explains what the system is intended to achieve, why it is being implemented, and what outcomes determine success.
 
 ---
 
-## 2. Strategic Intent
+### 2. Business Context
 
-The initiative is designed to achieve the following:
+Cal Preserving operates in the Bay Area with specialization in:
 
-- Create a repeatable and scalable acquisition channel
-- Generate profitable and properly scoped jobs
-- Improve geographic mix (Bay Area primary; Fringe secondary)
-- Increase commercial share over time
-- Support estimator and crew utilization without overload
+- Exterior wood preservation
+- Refinishing, repair, and protection
+- High-value surfaces such as decks and wood siding
 
-The system must support long-term optimization rather than short campaigns.
+Demand historically originates from:
 
----
+- Organic search
+- Reputation / referrals
+- Property transactions
+- Seasonal maintenance cycles
 
-## 3. Service Priority
-
-Ordered by revenue potential and operational importance:
-
-1. Deck (highest priority)
-2. Siding (high)
-3. Structures (medium)
-4. Pressure (supporting / lead magnet)
-5. Catch-all (discovery coverage)
-
-Furniture exists within structures and remains passive in Phase 1.
+The Google Ads initiative is intended to introduce a **repeatable, controllable paid demand channel** that retains alignment with operational constraints (crew capacity, geography, minimums, estimator load).
 
 ---
 
-## 4. Buyer Types
+### 3. Strategic Objectives
 
-Two primary buyer personas:
+The initiative supports four primary objectives:
 
-- Residential (owners, landlords, renters, buyer/seller cycles)
-- Commercial (property managers, HOAs, facilities, boards)
+**3.1 Business Objectives**
+- Increase booked revenue in profitable service categories
+- Expand mix toward larger and more complex jobs
+- Protect minimum economics in Fringe geographies
+- Enable selective growth of commercial work
 
-Commercial leads skew larger. Residential drives most inbound activity. Persona split is executed at LP/form level, not keyword level initially.
+**3.2 Marketing Objectives**
+- Capture high intent searches for restoration and refinishing services
+- Improve clarity around service capabilities (wood → not composite)
+- Establish competitive positioning in premium surfaces (deck, siding)
 
----
-
-## 5. Geographic Model
-
-Two geographic buckets:
-
-- Bay Area (core)
-- Fringe (secondary / extended service range)
-
-Bay Area supports broader service mix and lower minimums. Fringe supports larger jobs and more commercial viability. Same keywords, fewer expansion groups in Fringe.
-
----
-
-## 6. Sequenced Rollout (High Level)
-
-Three-phased rollout:
-
-**Phase 1 (Core Launch)**  
-- Launch Bay Area + Fringe campaigns
-- Persona mixed (Residential + Commercial combined)
-- LP support for core surfaces
-- Single CTA (form)
-- Phrase + Exact match
-- Negative filtering for DIY/retail/product categories
-
-**Phase 2 (Refinement & Validation)**  
-- Adjust budgets based on lead quality + close rate
-- Improve negative coverage
-- Add attribution and reporting clarity
-- Prepare commercial expansion
-
-**Phase 3 (Persona Split)**  
-- Split Bay Area + Fringe into Residential vs Commercial
-- Add commercial messaging, CTA, and LP variants
-- Maintain single CTA (form)
-- Sitelinks diverge by persona
+**3.3 Operational Objectives**
+- Reduce scheduling inefficiency from low-value distant jobs
+- Improve estimator workflow via better lead qualification
+- Support future scaling without full system rebuild
 
 ---
 
-## 7. Campaign Architecture (Phase Summary)
+### 4. Initiative Scope
 
-Same core surfaces across phases:
-
-- Deck
-- Siding
-- Structures
-- Pressure
-- Catch-all
-
-Persona split deferred until Phase 3 to reduce surface area at launch.
-
----
-
-## 8. CTA Model
-
-Single CTA used across all surfaces:
-
-- Residential CTA: `Request a Free Estimate`
-- Commercial CTA: `Request a Proposal` (added in Phase 3)
-
-No phone number in ads. Phone appears only on website.
-
----
-
-## 9. Landing Page Approach
-
-LP ownership by surface and persona:
-
-**Residential**
-- Deck
-- Siding
-- Structures
-- Pressure
-- Catch-all
-
-**Commercial**
-- Deck
-- Siding
-- Structures
-- Pressure
-- Catch-all
-
-Commercial LPs introduce different messaging (insurance, risk, board approvals, multi-unit considerations). No image dependencies specified here.
-
----
-
-## 10. Channel Controls
-
-To improve efficiency and filtering:
-
-- Phrase + Exact match
-- Hard negative lists for DIY/retail/composite/product
-- No seasonality logic in Phase 1
-- No routing logic in scope for this document set
-
----
-
-## 11. Attribution and Tracking
-
-Attribution will use:
-
-- UTM parameters
-- Form fields
-- Salesforce lead object tags
-
-Matching to downstream revenue is Phase 2+. Not modeled here.
-
----
-
-## 12. Output Expectations
-
-This initiative produces:
-
-- Campaign system (not single campaign)
-- Documented taxonomy
-- Defined LP and CTA model
-- Persona separation model
-- Geo separation model
-- Attribution path for future optimization
-
----
-
-## 13. Success Criteria (High Level)
-
-Success criteria measured by:
-
-- Cost per qualified lead
-- Close rate by surface and geo
-- Job size and margin alignment
-- Crew and estimator utilization
-- Commercial revenue share growth over time
-
----
-
-## 14. Scope Boundaries
-
-Out-of-scope:
-
-- Creative asset production (imagery)
-- Routing complexity
-- Automated seasonality controls
-- Bid automation beyond Google platform defaults
-- Phone-based lead capture within Google Ads
-
-In-scope:
+The initiative includes the following workstreams:
 
 - Campaign architecture
-- LP specification
-- CTA specification
-- Persona split design
-- Geo split design
-- Keyword + negative modeling
+- Keyword and negative keyword strategy
+- Landing page alignment
+- CTA and messaging alignment
+- Geo segmentation (Bay Area → Fringe → Persona split later)
+- Attribution and performance reporting
+- Budget planning and continuous optimization
+
+Routing, Salesforce customization, and phone-based attribution are **explicitly out of scope** for this phase of the initiative.
 
 ---
 
-## 15. Change Horizon
+### 5. Campaign Surfaces (Service Model)
 
-Expected future extensions:
+Five primary service surfaces are in scope:
 
-- Commercial stand-alone campaigns
-- Seasonality + capacity budgeting
-- Material/Species enrichment
-- Reporting automation
-- Routing automation
-- AI-assisted bid models
+1. Deck
+2. Siding
+3. Structures (Fence + Furniture + Exterior Wood Structures)
+4. Pressure (Hardscape pressure washing)
+5. Catch-All (Exterior wood / long tail)
 
-These are intentionally deferred until baseline performance is validated.
+This surface model aligns with real buyer queries and estimator workflows.
+
+---
+
+### 6. Geographic Model
+
+Two core geographies:
+
+- **Bay Area** (primary service region)
+- **Fringe** (extended service region with higher minimums)
+
+Geography impacts:
+
+- Job size thresholds
+- Crew routing viability
+- Estimator productivity
+- Budget weighting
 
 ---
 
-## 16. End State Concept
+### 7. Phased Deployment
 
-End state target is a stable, documented, multi-persona, multi-surface, multi-geo advertising system capable of continuous optimization without structural rebuild every season.
+Deployment occurs in three controlled phases:
 
-Baseline quality must be achieved before capacity scaling or automation.
+- **Phase 1:** Bay Area + Residential (baseline launch)
+- **Phase 2:** Bay Area + Fringe + Residential (regional expansion)
+- **Phase 3:** Bay Area + Fringe + Residential + Commercial (persona expansion)
+
+Each phase increases sophistication without requiring rework of earlier layers.
 
 ---
+
+### 8. Expected Outcomes
+
+The initiative is successful if:
+
+- Lead volume increases in profitable surfaces
+- Close rates and job sizes support sustainable CACs
+- Spend migrates toward geographies and services with best economics
+- System remains maintainable and extensible into commercial work
+
+---
+
+### 9. Summary
+
+This initiative is not a one-off advertising campaign. It is the construction of an **ongoing demand generation system** that aligns paid acquisition with internal business constraints and long-term revenue goals.
