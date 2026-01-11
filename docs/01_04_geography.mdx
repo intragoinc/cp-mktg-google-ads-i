@@ -1,0 +1,148 @@
+# Part 1.4 — Geography Model
+
+---
+
+## 1. Overview
+
+Geography impacts Cal Preserving’s unit economics due to:
+
+- Travel time
+- Crew routing
+- Estimator workload
+- Minimum job viability
+- Commercial vs Residential distribution
+
+The initiative uses a structured geo model aligned to campaign phases.
+
+---
+
+## 2. Geo Segments
+
+Two geo segments are defined:
+
+1. **Bay Area (Core)**
+2. **Fringe (Outlying)**
+
+These are logical service areas rather than formal ZIP mappings. ZIP codification is added operationally during Salesforce integration and not required for Phase 1.
+
+---
+
+## 3. Geo Definitions (Conceptual)
+
+| Geo | Profile | Strategic Role |
+|---|---|---|
+| **Bay Area (Core)** | Dense housing, many wood surfaces, high deck/siding penetration | Highest efficiency & demand |
+| **Fringe (Outlying)** | Lower density, more travel, fewer small residential jobs | Higher minimums, better for commercial |
+
+---
+
+## 4. Geo Economics
+
+### 4.1 Bay Area Core
+
+Bay Area is favorable for:
+
+- Smaller residential jobs
+- Repeat work
+- High-referral density
+- Multi-surface opportunities
+
+### 4.2 Fringe Territories
+
+Fringe is favorable for:
+
+- Larger deck & siding jobs
+- Commercial / HOA / PM work
+- Jobs with ticket size that justifies travel
+
+Fringe is **not favorable** for:
+
+- Small residential furniture
+- Small pressure-only
+- Low-ticket fence-only
+
+---
+
+## 5. Geo Usage by Phase
+
+| Phase | Bay Area | Fringe | Notes |
+|---|---|---|---|
+| **1** | ✅ Enabled | ❌ Disabled | Launch simplicity |
+| **2** | ✅ Enabled | ✅ Enabled | Residential only |
+| **3** | ✅ Enabled | ✅ Enabled | Residential + Commercial split |
+
+---
+
+## 6. Implications on Campaign Architecture
+
+**Bay Area** supports full campaign spread:
+
+- Deck
+- Siding
+- Structures
+- Furniture
+- Pressure
+- Catch-all
+
+**Fringe** will run more constrained:
+
+- Deck (strong)
+- Siding (strong)
+- Structures (moderate)
+- Furniture (selective)
+- Pressure (selective)
+- Catch-all (limited)
+
+Budget weighting and minimums differ, but are operational and not implemented in ad copy.
+
+---
+
+## 7. Search Language Differences
+
+| Geo | Search Language |
+|---|---|
+| Bay Area | “Near me”, city names, consumer queries |
+| Fringe | City names, regional identifiers (e.g. counties) |
+
+Commercial persona increases the use of:
+
+- “Bay Area” phrasing
+- Property-type phrasing (HOA, apartments, facilities)
+
+---
+
+## 8. Geo & Persona Interaction
+
+Personas and geos interact meaningfully only in **Phase 3**:
+
+| Geo × Persona | Notes |
+|---|---|
+| Bay Area × Residential | Core volume |
+| Bay Area × Commercial | Moderate — high value |
+| Fringe × Residential | Selective — minimums matter |
+| Fringe × Commercial | Attractive — larger ticket sizes |
+
+---
+
+## 9. Geo in Salesforce
+
+Geo does **not** appear inside the landing page. It is inferred from:
+
+- UTM parameters (campaign)
+- Salesforce routing
+- ZIP data captured in the form
+
+This avoids user friction and aligns with routing systems.
+
+---
+
+## 10. Summary
+
+The geo model enables:
+
+- Efficient estimator allocation
+- Higher close-rate targeting
+- Lower wasted travel
+- Commercial growth in Fringe locations
+
+Geography is therefore a silent but foundational dimension of the overall initiative.
