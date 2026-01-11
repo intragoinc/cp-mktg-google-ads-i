@@ -50,3 +50,445 @@ Internal phase identifiers:
 phase_1   // Bay Area only, Residential (implicit)
 phase_2   // Bay Area + Fringe, Residential (implicit)
 phase_3   // Bay Area + Fringe, Residential + Commercial (explicit personas)
+```
+
+In CSVs this may be represented as `1`, `2`, `3` or `phase_1`, `phase_2`, `phase_3`.  
+The important part is consistent usage.
+
+---
+
+### 3.2 Geo
+
+Canonical **geo** enum:
+
+```txt
+bay_area
+fringe
+```
+
+Usage:
+
+- **Phase 1** → `bay_area` only  
+- **Phase 2** → `bay_area`, `fringe`  
+- **Phase 3** → `bay_area`, `fringe` (same, but now combined with personas)
+
+---
+
+### 3.3 Persona
+
+Canonical **persona** enum (Phase 3 only):
+
+```txt
+residential
+commercial
+```
+
+Usage by phase:
+
+- **Phase 1**: persona dimension not used (assume residential)  
+- **Phase 2**: persona dimension not used (assume residential)  
+- **Phase 3**: persona dimension is explicit and required
+
+---
+
+### 3.4 Surface
+
+Canonical **surface** enum:
+
+```txt
+deck
+siding
+structures
+pressure
+catch_all
+```
+
+Definitions:
+
+- `deck` — decks, railings, stairs, balconies  
+- `siding` — wood siding, cladding, facades  
+- `structures` — fences, gates, trellis, arbors, pergolas, gazebos, patio furniture  
+- `pressure` — **hardscape-only pressure washing** (concrete, stone, patios, etc.)  
+- `catch_all` — exterior wood restoration/repair queries that do not fit neatly into a single surface
+
+---
+
+### 3.5 CTA
+
+Canonical **CTA** enum (for LP + ads alignment):
+
+```txt
+request_free_estimate   // Residential
+request_proposal        // Commercial
+```
+
+Rules:
+
+- `residential` → `request_free_estimate`  
+- `commercial` → `request_proposal`  
+
+Phone calls appear on the website, but **no phone number appears in Google Ads ad copy**.
+
+---
+
+### 3.6 Sitelinks
+
+Canonical **sitelink labels**:
+
+```txt
+process
+gallery
+faq
+request_free_estimate   // Residential
+request_proposal        // Commercial
+```
+
+Mapping:
+
+- Residential sitelinks:
+  - Process
+  - Gallery
+  - FAQ
+  - Request a Free Estimate
+
+- Commercial sitelinks:
+  - Process
+  - Gallery
+  - FAQ
+  - Request a Proposal
+
+Sitelinks are shared across surfaces; text applies at the service-line level, not deeply surface-specific.
+
+---
+
+## 4. Phase Behavior
+
+### 4.1 Phase 1 — Baseline Launch
+
+**Scope:**
+
+- Geo: `bay_area` only  
+- Persona: implicit residential (no persona column required)  
+- Surfaces: `deck`, `siding`, `structures`, `pressure`, `catch_all`  
+- LPs: Residential only (one LP per surface)  
+- CTA: `request_free_estimate` everywhere  
+- Sitelinks: Residential set  
+- Campaigns: grouped by `geo + surface`
+
+Example campaign concepts (logical):
+
+- `bay_area_deck`
+- `bay_area_siding`
+- `bay_area_structures`
+- `bay_area_pressure`
+- `bay_area_catch_all`
+
+Phase 1 is the minimal viable structure that matches your current CSV master.
+
+---
+
+### 4.2 Phase 2 — Geo Expansion (Fringe)
+
+**Scope:**
+
+- Geo: `bay_area`, `fringe`  
+- Persona: still implicit residential  
+- Surfaces: same 5  
+- LPs: still Residential-only  
+- CTA: `request_free_estimate`  
+- Sitelinks: Residential set  
+- Campaigns: now `geo + surface` for both geos
+
+Example campaign concepts:
+
+- `bay_area_deck`, `fringe_deck`
+- `bay_area_siding`, `fringe_siding`
+- etc.
+
+Fringe runs more selective ad groups and budget weighting, but taxonomy remains identical.
+
+---
+
+### 4.3 Phase 3 — Persona Expansion
+
+**Scope:**
+
+- Geo: `bay_area`, `fringe`
+- Persona: `residential`, `commercial`
+- Surfaces: same 5
+- LPs: now **duplicated** by persona (2 × 5 = 10 LPs)
+- CTA:
+  - `residential` → `request_free_estimate`
+  - `commercial` → `request_proposal`
+- Sitelinks:
+  - Residential sitelinks for residential persona
+  - Commercial sitelinks for commercial persona
+- Campaigns: now segmented by `geo + surface + persona`
+
+Example campaign concepts:
+
+- `bay_area_deck_residential`
+- `bay_area_deck_commercial`
+- `fringe_siding_residential`
+- `fringe_siding_commercial`
+- etc.
+
+Phase 3 is deployed **all at once** (not staggered inside the phase).
+
+---
+
+## 5. Campaign Concept Model
+
+### 5.1 Canonical Campaign Key
+
+The **logical key** for a campaign is:
+
+```txt
+campaign_key = geo + "_" + surface [+ "_" + persona_in_phase3]
+```
+
+Examples:
+
+- Phase 1 / 2:
+  - `bay_area_deck`
+  - `fringe_siding`
+  - `bay_area_catch_all`
+
+- Phase 3:
+  - `bay_area_deck_residential`
+  - `bay_area_deck_commercial`
+  - `fringe_pressure_residential`
+  - `fringe_catch_all_commercial`
+
+This key should map directly to:
+
+- Google Ads campaign name (human-readable variant)  
+- CSV master column grouping  
+- LP selection logic  
+- Reporting aggregation  
+
+---
+
+### 5.2 Ad Group Model
+
+Within each campaign, ad groups are segmented mainly by:
+
+- **Keyword intent**
+- **Surface subtype or species** (when applicable)
+
+Examples (for `bay_area_deck_residential`):
+
+- `Deck Repair and Maintenance`
+- `Deck Staining and Sealing`
+- `Premium Wood Deck Restoration`
+- `Hardwood Deck Restoration`
+- `Redwood Deck Refinishing`
+- etc.
+
+Exact wording may differ, but the **intent family** must be stable.
+
+---
+
+## 6. Keyword Intent Taxonomy
+
+Keyword intent families underpin ad groups and RSA variants.
+
+### 6.1 Intent Families (High Level)
+
+```txt
+repair_maintenance     // “repair”, “maintenance”, “fix”, “restore”
+finishing_protection   // “refinishing”, “staining”, “sealing”, “coating”
+species_premium        // “redwood”, “cedar”, “ipe”, “teak”, “hardwood”
+pressure_hardscape     // “concrete pressure washing”, “patio cleaning”
+generic_restoration    // “wood restoration”, “exterior wood services”
+catch_all              // broad exterior wood queries
+```
+
+These are conceptual labels; in your CSV master, intent is expressed through **ad group name + keyword list**.
+
+---
+
+### 6.2 Match Types
+
+For Phase 1–3, the default strategy:
+
+- **Exact + Phrase**  
+- No Broad match in baseline design  
+- Negative keywords handle retail/composite/DIY
+
+---
+
+### 6.3 Composite / DIY / Retail Negatives
+
+Global negative patterns include:
+
+- DIY / “how to”
+- “cheap”, “free”
+- “home depot”, “lowes”, “menards”, “amazon”, etc.
+- Materials-only / kits / prefab / prebuilt
+- Composite brands and non-wood materials:
+  - Trex, TimberTech, Azek, Fiberon
+  - Fiber cement, Hardie, James Hardie, LP SmartSide
+  - PVC, vinyl, plastic, resin
+  - Metal, aluminum, steel, iron, wrought iron
+
+These are applied at **campaign negative** level as per CSV master.
+
+---
+
+## 7. LP & CTA Mapping
+
+### 7.1 Landing Page Matrix
+
+LPs are defined by:
+
+- surface
+- persona (Phase 3 only)
+
+Canonical LP key:
+
+```txt
+lp_key = persona + "_" + surface   // Phase 3
+lp_key = surface                   // Phase 1–2
+```
+
+Conceptual LP URLs (implementation-specific):
+
+```txt
+/residential/deck
+/residential/siding
+/residential/structures
+/residential/pressure
+/residential/catch-all
+
+/commercial/deck
+/commercial/siding
+/commercial/structures
+/commercial/pressure
+/commercial/catch-all
+```
+
+(Exact paths are flexible; consistency is the requirement.)
+
+---
+
+### 7.2 CTA Rules
+
+Mapping:
+
+- `persona = residential` → CTA button text: **“Request a Free Estimate”**
+- `persona = commercial` → CTA button text: **“Request a Proposal”**
+
+This appears:
+
+- On LP primary CTA  
+- In RSAs (where CTA-like language is used in description text or headlines)  
+
+No phone numbers appear in ad copy.
+
+---
+
+### 7.3 Sitelink Rules
+
+**Residential:**
+
+- Process
+- Gallery
+- FAQ
+- Request a Free Estimate
+
+**Commercial:**
+
+- Process
+- Gallery
+- FAQ
+- Request a Proposal
+
+Sitelink naming is normalized; underlying URLs can point to:
+
+- `/process`
+- `/gallery`
+- `/faq`
+- `/estimate` or `/proposal`
+
+---
+
+## 8. Persona Behavior by Phase
+
+### 8.1 Phase 1 & 2
+
+- Persona not explicit in campaigns or CSVs
+- LPs use Residential tone by default
+- Commercial inquiries arrive implicitly through generic terms
+- No persona-based reporting dimension (only inferred)
+
+### 8.2 Phase 3
+
+- Persona is explicit in:
+  - Campaign naming
+  - CSV master (`persona` column)
+  - LP selection
+  - CTA wording
+  - Sitelinks
+
+- Reporting gains:
+  - `service × geo × persona` lens
+
+---
+
+## 9. Alignment with CSV Masters
+
+### 9.1 Required Columns (Phase 3 CSVs)
+
+Baseline header (example you already chose):
+
+```txt
+campaign,persona,geo,surface,phase,ad_group,keyword,match_type,
+ad_group_negatives,campaign_negatives,lp_url,cta,sitelinks
+```
+
+Alignment rules:
+
+- `campaign` → human-readable name, derived from `geo + surface + persona`  
+- `persona` → `residential` or `commercial` (Phase 3 only; blank or omitted in Phases 1–2)  
+- `geo` → `bay_area` or `fringe`  
+- `surface` → `deck`, `siding`, `structures`, `pressure`, `catch_all`  
+- `phase` → `1`, `2`, or `3` (or `phase_1` etc., but must be consistent)  
+- `lp_url` → stable LP path as per mapping rules  
+- `cta` → `request_free_estimate` or `request_proposal`  
+- `sitelinks` → a list or encoded structure (e.g. `process;gallery;faq;request_free_estimate`)  
+
+### 9.2 Backwards Compatibility
+
+Phase 1 and 2 CSVs:
+
+- May omit `persona` or fill as `residential` consistently  
+- `geo` and `surface` must still conform to enums  
+- `cta` can be uniformly `request_free_estimate`  
+- `sitelinks` can be uniformly residential set  
+
+---
+
+## 10. Non-Goals
+
+This taxonomy intentionally **does not** cover:
+
+- Salesforce object model or routing rules  
+- Phone call attribution configuration  
+- Seasonality pacing or scheduling  
+- Bid strategy tuning over time  
+
+Those can be layered later without altering the base segmentation model.
+
+---
+
+## 11. Summary
+
+This Segmentation & Taxonomy model defines:
+
+- Canonical enums for **geo**, **persona**, **surface**, **CTA**, and **sitelinks**  
+- Phase-dependent behavior for campaigns and LPs  
+- How CSV masters should be structured  
+- How future layers (LP, RSA, reporting) align without rework  
+
+All future documents in `/docs` and all CSVs in `/doc2` should remain consistent with these definitions.
