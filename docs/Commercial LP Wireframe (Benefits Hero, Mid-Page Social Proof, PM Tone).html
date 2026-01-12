@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Commercial {{SURFACE}} Restoration | Cal Preserving</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
+    header, section, footer { padding: 24px 16px; max-width: 960px; margin: 0 auto; }
+    .hero { padding-top: 32px; padding-bottom: 32px; }
+    .hero-grid { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+    .hero-main { flex: 1 1 320px; }
+    .hero-form { flex: 1 1 320px; border: 1px solid #ccc; padding: 16px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .badge { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid #ccc; }
+    .btn-primary { display: inline-block; padding: 10px 18px; border-radius: 4px; border: none; cursor: pointer; }
+    .layout-two-col { display: flex; flex-wrap: wrap; gap: 24px; }
+    .col { flex: 1 1 280px; }
+    .section-label { text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; color: #777; margin-bottom: 4px; }
+    .card { border: 1px solid #ddd; padding: 16px; margin-bottom: 16px; border-radius: 4px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .process-steps ol { padding-left: 18px; }
+    .process-steps li { margin-bottom: 8px; }
+    .faq-item + .faq-item { margin-top: 12px; }
+    .faq-question { font-weight: 600; }
+    footer { font-size: 12px; color: #777; margin-bottom: 32px; }
+    @media (max-width: 768px) {
+      header, section, footer { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="layout-two-col" style="align-items:center;">
+      <div>
+        <div class="section-label">Cal Preserving</div>
+        <h1>Commercial {{SURFACE}} Restoration &amp; Maintenance</h1>
+        <p style="max-width:520px;">
+          Exterior wood restoration for HOAs, property managers, and commercial facilities across the Bay Area.
+        </p>
+      </div>
+      <div style="text-align:right; font-size:14px;">
+        <div><strong>Talk with our team</strong></div>
+        <div>Call: (xxx) xxx-xxxx</div>
+        <div>Mon–Fri, 9am–5pm</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-grid">
+      <!-- Hero Copy -->
+      <div class="hero-main">
+        <div class="badge-row">
+          <span class="badge">Commercial / HOA / PM</span>
+          <span class="badge">Licensed &amp; Insured</span>
+          <span class="badge">Exterior Wood Specialists</span>
+        </div>
+
+        <!-- H1 CONFIG: BENEFITS-FIRST HERO -->
+        <h2>Protect Your Property’s {{SURFACE}} Assets with Professional Restoration</h2>
+        <p>
+          We help facilities teams, property managers, and HOAs restore and maintain exterior wood surfaces while minimizing disruption to residents and operations.
+        </p>
+
+        <ul>
+          <li>Scalable restoration plans for multi-unit and multi-structure sites.</li>
+          <li>Clear scopes, scheduling, and on-site communication.</li>
+          <li>Workmanship guarantee and proper documentation on completion.</li>
+        </ul>
+
+        <button class="btn-primary">
+          Request a Proposal
+        </button>
+        <div style="font-size:12px; color:#777; margin-top:8px;">
+          Share your property details and we’ll prepare a tailored proposal.
+        </div>
+      </div>
+
+      <!-- Hero Form (Proposal Request) -->
+      <aside class="hero-form">
+        <div class="section-label">Start a Conversation</div>
+        <h3>Request a Proposal</h3>
+        <p style="font-size:14px;">
+          Tell us about your property and {{SURFACE}} needs. We’ll follow up with next steps and recommended scope.
+        </p>
+
+        <form>
+          <!-- Job Site -->
+          <label>Primary Property Address *</label><br />
+          <input type="text" name="street" style="width:100%; margin-bottom:8px;" /><br />
+
+          <div class="layout-two-col">
+            <div class="col">
+              <label>City *</label><br />
+              <input type="text" name="city" style="width:100%; margin-bottom:8px;" />
+            </div>
+            <div class="col">
+              <label>Zip *</label><br />
+              <input type="text" name="zip" style="width:100%; margin-bottom:8px;" />
+            </div>
+          </div>
+
+          <!-- Property Type (fixed to Commercial but still captured) -->
+          <label>Property Type *</label><br />
+          <label><input type="radio" name="property_type" value="commercial" checked /> Commercial</label><br />
+          <label><input type="radio" name="property_type" value="residential" /> Residential</label><br /><br />
+
+          <!-- Project Type -->
+          <label>Project Type</label><br />
+          <select name="project_type" style="width:100%; margin-bottom:8px;">
+            <option value="">Select one</option>
+            <option value="single_structure">Single Structure</option>
+            <option value="multi_structure">Multi-Structure</option>
+            <option value="multi_property">Multi-Property</option>
+          </select>
+
+          <!-- Surfaces -->
+          <label>Surfaces to be addressed *</label><br />
+          <label><input type="checkbox" name="surface_deck" /> Decks</label><br />
+          <label><input type="checkbox" name="surface_siding" /> Siding</label><br />
+          <label><input type="checkbox" name="surface_structures" /> Fences / Exterior Structures</label><br />
+          <label><input type="checkbox" name="surface_furniture" /> Patio Furniture</label><br />
+          <label><input type="checkbox" name="surface_hardscape" /> Hardscape (Pressure Washing)</label><br />
+          <label><input type="checkbox" name="surface_other" /> Other</label><br /><br />
+
+          <!-- Timing -->
+          <label>When are you planning to start? *</label><br />
+          <select name="project_timing" style="width:100%; margin-bottom:8px;">
+            <option value="asap">ASAP</option>
+            <option value="within_1_month">Within 1 month</option>
+            <option value="within_3_months">Within 3 months</option>
+            <option value="just_exploring">Just exploring options</option>
+          </select>
+
+          <!-- Contact Info -->
+          <label>First Name *</label><br />
+          <input type="text" name="first_name" style="width:100%; margin-bottom:8px;" /><br />
+
+          <label>Last Name *</label><br />
+          <input type="text" name="last_name" style="width:100%; margin-bottom:8px;" /><br />
+
+          <label>Company / Organization</label><br />
+          <input type="text" name="company_name" style="width:100%; margin-bottom:8px;" /><br />
+
+          <label>Job Title</label><br />
+          <input type="text" name="job_title" style="width:100%; margin-bottom:8px;" /><br />
+
+          <label>Phone *</label><br />
+          <input type="tel" name="phone" style="width:100%; margin-bottom:8px;" /><br />
+
+          <label>Email *</label><br />
+          <input type="email" name="email" style="width:100%; margin-bottom:8px;" /><br />
+
+          <!-- Relationship to Property -->
+          <label>Your role for this property *</label><br />
+          <select name="property_relationship" style="width:100%; margin-bottom:8px;">
+            <option value="">Select one</option>
+            <option value="property_manager">Property Manager</option>
+            <option value="owner_landlord">Owner / Landlord</option>
+            <option value="facilities">Facilities / Maintenance</option>
+            <option value="board_member">Board Member</option>
+            <option value="contractor">General Contractor</option>
+            <option value="other">Other</option>
+          </select>
+
+          <!-- SMS Consent -->
+          <label>
+            <input type="checkbox" name="sms_opt_in" />
+            I agree to receive SMS updates about this proposal. Reply STOP to opt out.
+          </label><br /><br />
+
+          <button type="submit" class="btn-primary" style="width:100%;">
+            Request a Proposal
+          </button>
+        </form>
+      </aside>
+    </div>
+  </section>
+
+  <!-- VALUE / FACILITIES ANGLE -->
+  <section>
+    <div class="section-label">Why Cal Preserving</div>
+    <h2>Exterior Wood Restoration for Managed Properties</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Built for HOAs &amp; PMs</h3>
+        <p>
+          We work with property managers, boards, and facilities teams to plan and execute {{SURFACE}} restoration with clear scopes and communication.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Safety &amp; Compliance</h3>
+        <p>
+          Licensed, insured, and experienced with multi-unit environments where safety, access, and resident communication matter.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Asset Protection</h3>
+        <p>
+          Proper restoration extends the life of exterior wood, reduces long-term capital expense, and protects property value.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF (MID-PAGE) -->
+  <section>
+    <div class="section-label">Social Proof</div>
+    <h2>Work We’ve Done for Managed Properties</h2>
+    <div class="layout-two-col">
+      <div class="col">
+        <div class="card">
+          <p><strong>“Reliable and easy to work with.”</strong></p>
+          <p style="font-size:14px;">
+            “Our HOA board appreciated the detailed proposal and clear communication. The project was completed on schedule.”
+          </p>
+          <p style="font-size:12px; color:#777;">HOA Board Member • Bay Area</p>
+        </div>
+        <div class="card">
+          <p><strong>“Residents were kept informed.”</strong></p>
+          <p style="font-size:14px;">
+            “They coordinated schedules, signage, and access updates so residents always knew what to expect.”
+          </p>
+          <p style="font-size:12px; color:#777;">Property Manager • Multi-building complex</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <p><strong>What You Can Expect</strong></p>
+          <ul style="font-size:14px;">
+            <li>Site walk-through and documented scope.</li>
+            <li>Clear start dates and expected completion windows.</li>
+            <li>Coordination with your team for parking, access, and staging.</li>
+            <li>Before/after documentation as requested.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS (COMMERCIAL / PM FLAVORED) -->
+  <section class="process-steps">
+    <div class="section-label">Process</div>
+    <h2>How We Approach Commercial {{SURFACE}} Projects</h2>
+    <ol>
+      <li>
+        <strong>Initial Discussion &amp; Site Review</strong> — We gather basic property details, review photos or plans, and if needed perform a walkthrough.
+      </li>
+      <li>
+        <strong>Scope &amp; Proposal</strong> — Clear written scope, including phases if necessary, along with pricing and schedule expectations.
+      </li>
+      <li>
+        <strong>Scheduling &amp; Coordination</strong> — We coordinate with your team on access, resident notifications, parking, and staging.
+      </li>
+      <li>
+        <strong>Execution &amp; Oversight</strong> — Work is completed per scope, with a clear point of contact for any questions during the project.
+      </li>
+      <li>
+        <strong>Completion &amp; Documentation</strong> — Final walkthrough, punch list if needed, and documentation/photos to support your records.
+      </li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-label">FAQ</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">Can you work in occupied properties?</div>
+      <p style="font-size:14px;">
+        Yes. We regularly work in occupied buildings and communities and can align with your rules for noise, working hours, and resident communication.
+      </p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you handle multi-building or multi-phase projects?</div>
+      <p style="font-size:14px;">
+        Yes. We can phase work across multiple structures or seasons to align with your budget and operational needs.
+      </p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What geographic areas do you cover?</div>
+      <p style="font-size:14px;">
+        We focus on the Bay Area and select surrounding regions. Share your property address and we’ll confirm coverage and travel feasibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="section-label">Next Step</div>
+    <h2>Ready to Discuss Your {{SURFACE}} Project?</h2>
+    <p>
+      Share your property details and {{SURFACE}} needs and we’ll prepare a proposal aligned to your budget, timeline, and operational constraints.
+    </p>
+    <button class="btn-primary">
+      Request a Proposal
+    </button>
+    <div style="font-size:12px; color:#777; margin-top:8px;">
+      We respond to most inquiries within one business day.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© Cal Preserving — Exterior Wood Restoration &amp; Maintenance</div>
+    <div style="margin-top:4px; font-size:11px;">
+      This page is for commercial, HOA, and property-managed {{SURFACE}} projects in the Bay Area and select surrounding regions.
+    </div>
+  </footer>
+
+</body>
+</html>
