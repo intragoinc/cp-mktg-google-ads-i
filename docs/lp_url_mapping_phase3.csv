@@ -1,11 +1,13 @@
-campaign,persona,surface,lp_url
-Deck,residential,deck,https://calpreserving.com/residential/deck/
-Siding,residential,siding,https://calpreserving.com/residential/siding/
-Wood Structures,residential,wood-structures,https://calpreserving.com/residential/wood-structures/
-Pressure,residential,pressure,https://calpreserving.com/residential/pressure/
-Catch-All,residential,catch-all,https://calpreserving.com/residential/
-Deck,commercial,deck,https://calpreserving.com/commercial/deck/
-Siding,commercial,siding,https://calpreserving.com/commercial/siding/
-Wood Structures,commercial,wood-structures,https://calpreserving.com/commercial/wood-structures/
-Pressure,commercial,pressure,https://calpreserving.com/commercial/pressure/
-Catch-All,commercial,catch-all,https://calpreserving.com/commercial/
+persona,surface,lp_url,seo_index,notes
+residential,wood-deck,https://calpreserving.com/residential/wood-deck/,noindex,Paid LP for residential deck campaigns
+residential,wood-siding,https://calpreserving.com/residential/wood-siding/,noindex,Paid LP for residential siding campaigns
+residential,wood-structures,https://calpreserving.com/residential/wood-structures/,noindex,Paid LP for residential fences & exterior wood structures
+residential,wood-furniture,https://calpreserving.com/residential/wood-furniture/,noindex,Paid LP for residential teak/hardwood furniture refinishing
+residential,pressure,https://calpreserving.com/residential/pressure/,noindex,Paid LP for residential hardscape pressure washing jobs
+residential,catch-all,https://calpreserving.com/residential/,noindex,Catch-all residential exterior wood LP for mixed/uncertain intents
+commercial,wood-deck,https://calpreserving.com/commercial/wood-deck/,noindex,Paid LP for commercial & multi-unit deck restoration
+commercial,wood-siding,https://calpreserving.com/commercial/wood-siding/,noindex,Paid LP for commercial & multi-unit siding restoration
+commercial,wood-structures,https://calpreserving.com/commercial/wood-structures/,noindex,Paid LP for fences & exterior wood structures at commercial/HOA sites
+commercial,wood-furniture,https://calpreserving.com/commercial/wood-furniture/,noindex,Paid LP for commercial/HOA teak & outdoor furniture refinishing
+commercial,pressure,https://calpreserving.com/commercial/pressure/,noindex,Paid LP for commercial hardscape pressure washing jobs
+commercial,catch-all,https://calpreserving.com/commercial/,noindex,Catch-all commercial LP for broad exterior wood queries
