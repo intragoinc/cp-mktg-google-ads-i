@@ -1,0 +1,267 @@
+# 04_01 — SEO Alignment Spec
+
+> Canonical alignment between Paid Search (Google Ads), Landing Pages, and future SEO redesign.
+
+---
+
+## 1. Scope
+
+This document defines how Cal Preserving:
+
+- Uses landing pages for **paid acquisition**
+- Maintains future SEO viability
+- Avoids duplicate content and cannibalization
+- Establishes canonical URL patterns for Phase 1–3 rollout
+
+This document does **not** define:
+
+- Website navigation
+- Full SEO redesign / IA (“Information Architecture”)
+- Content calendar
+- Technical SEO implementation details (handled in 04_03)
+
+---
+
+## 2. Strategic Context
+
+Cal Preserving operates paid search through a **surface-based segmentation model** with optional persona differentiation:
+
+| Dimension | Values |
+|---|---|
+| Persona | Residential, Commercial |
+| Surface | Deck, Siding, Wood-Structures, Pressure, Catch-All |
+| Geo (Campaign Only) | Bay Area, Fringe |
+
+The LP system must:
+
+- Match **keyword → surface → LP**
+- Allow persona-specific messaging
+- Maintain Phase stability
+- Avoid polluting the main SEO stack prematurely
+
+---
+
+## 3. Alignment Principles
+
+1. **Surface governs LP intent**  
+   e.g., “deck refinishing” → deck LP
+
+2. **Persona governs messaging**  
+   e.g., Residential vs Commercial tone & CTA
+
+3. **Geo remains campaign-only**  
+   Not in URL, title, or navigation structure
+
+4. **SEO stack must remain future-scalable**  
+   Avoid premature persona split in main navigation
+
+5. **Avoid duplicate surface content** across personas & geo
+
+---
+
+## 4. Canonical URL Structure (Phase 3 Model)
+
+URLs are persona-first, surface-second:
+
+```
+/{persona}/{surface}/
+```
+
+With this canonical table:
+
+| Persona | Surface | URL |
+|---|---|---|
+| Residential | Deck | `/residential/deck/` |
+| Residential | Siding | `/residential/siding/` |
+| Residential | Wood Structures | `/residential/wood-structures/` |
+| Residential | Pressure | `/residential/pressure/` |
+| Residential | Catch-All | `/residential/` |
+| Commercial | Deck | `/commercial/deck/` |
+| Commercial | Siding | `/commercial/siding/` |
+| Commercial | Wood Structures | `/commercial/wood-structures/` |
+| Commercial | Pressure | `/commercial/pressure/` |
+| Commercial | Catch-All | `/commercial/` |
+
+---
+
+## 5. Indexing & SEO Policy
+
+**Paid LP pages will be `noindex, follow`**
+
+Rationale:
+
+- Prevent SEO cannibalization
+- Avoid duplicate content across persona
+- Future-proof for SEO redesign
+- Allow link equity flow for internal links
+
+Canonical implementation directive:
+
+```html
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://calpreserving.com/">
+```
+
+Where canonical target = nearest SEO-viable surface or root.
+
+---
+
+## 6. Canonical SEO Surface Pages (Not Persona-Split)
+
+Future SEO stack consolidates to:
+
+```
+/deck/
+/siding/
+/wood-structures/
+/pressure-washing/
+/exterior-wood/     (Catch-all)
+```
+
+These align to keyword demand without persona explosion.
+
+Paid LPs exist **outside** SEO stack.
+
+---
+
+## 7. CTA Divergence (Persona Based)
+
+| Persona | CTA Copy |
+|---|---|
+| Residential | **Request a Free Estimate** |
+| Commercial | **Request a Proposal** |
+
+Both drive to the **same system-form** for now.
+
+---
+
+## 8. Content Variants (Messaging)
+
+Paid LP copy must diverge here:
+
+| Dimension | Residential | Commercial |
+|---|---|---|
+| Trust signals | Quality, Reviews, Craft | Insurance, OSHA, Documentation |
+| Work framing | Aesthetic + Longevity | Scope + Risk + Disruption |
+| Economic logic | Protect value + Enjoyment | Protect Asset + Reduce Risk |
+| Photos | Lifestyle + Detail | Multi-unit + Scale |
+| Testimonials | Homeowners | PM / Board / Multi-unit |
+| CTA | Estimate | Proposal |
+
+---
+
+## 9. Internal Linking Rules
+
+Paid LPs may link to:
+
+✔ Gallery  
+✔ FAQ  
+✔ Process  
+✔ Home  
+✔ SEO pages (optional future)
+
+Paid LPs must not:
+
+✖ Introduce persona goblins in SEO structure  
+✖ Compete with SEO pages for intent  
+✖ Generate duplicate surface landing content for SEO
+
+Paid LP may optionally inject:
+
+- Related surfaces
+- Before/after gallery
+- Review badges
+- Case studies
+
+---
+
+## 10. Redirect & Duplicate Control
+
+To avoid SEO pollution:
+
+**Rule:** Multiple query entry points → same LP → same canonical
+
+Example:
+
+```
+/residential/deck/
+?utm_source=google
+?utm_campaign=deck-bayarea
+?gclid=xxxx
+```
+
+All resolve to same canonical.
+
+No redirects applied at this layer.
+
+---
+
+## 11. Phase Compatibility
+
+### Phase 1 (Residential Only)
+
+URLs used:
+
+```
+/residential/deck/
+```
+
+### Phase 2 (Add Fringe via Campaign)
+
+Same URLs:
+
+```
+/residential/deck/
+```
+
+### Phase 3 (Persona Split)
+
+Commercial URLs added:
+
+```
+/commercial/deck/
+```
+
+---
+
+## 12. SEO vs Paid Sitemaps
+
+To avoid index conflict:
+
+**Paid Sitemap:**
+
+- Not submitted to Google
+- Not in robots.txt
+- Generated for QA / Campaign LP reference only
+
+**SEO Sitemap:**
+
+- Submitted to Google
+- Includes canonical SEO pages only
+
+---
+
+## 13. Future SEO Playbook Dependencies
+
+To evolve SEO later, add:
+
+- Species pages (optional)
+- Maintenance guides
+- Staining guides
+- Price ranges
+- Case studies
+- Service area pages
+- Dining deck / HOA pages
+- Architect / GC pages
+
+All outside paid persona split.
+
+---
+
+## 14. Recommendation Summary
+
+1. Keep persona split in Paid LP only  
+2. Keep SEO stack persona-neutral  
+3. Use noindex/follow on Paid LP  
+4. Do not mix navigation between systems  
+5. Ensure canonical consistency
