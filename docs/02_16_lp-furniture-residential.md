@@ -13,10 +13,10 @@
 We refinish hardwood outdoor furniture such as:
 
 - Teak dining sets
-- Teak loungers
-- Hardwood benches
-- Patio seating
-- IPE outdoor tables
+- Teak lounge chairs and loungers
+- Hardwood benches and settees
+- Adirondack chairs and gliders
+- IPE tables and side tables
 - Redwood accent furniture
 
 We do not refinish metal or upholstered furniture.
