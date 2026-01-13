@@ -164,25 +164,6 @@ Create a repeatable, measurable paid search channel that:
 
 ---
 
-## QA Checklist
-
-### Per Phase
-
-- [ ] LP loads correctly for each campaign
-- [ ] Form validation works (required fields, reCAPTCHA)
-- [ ] UTM fields populate correctly
-- [ ] Test submissions appear in Salesforce with correct mapping
-- [ ] Thank-you redirect works
-
-### Phase 3 Specific
-
-- [ ] Residential campaigns → residential LPs only
-- [ ] Commercial campaigns → commercial LPs only
-- [ ] Correct CTAs displayed per persona
-- [ ] Form structure identical across personas
-
----
-
 ## Campaign Structure
 
 ### Phase 1 (5 Campaigns)
