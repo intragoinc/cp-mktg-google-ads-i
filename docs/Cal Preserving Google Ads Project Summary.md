@@ -187,7 +187,6 @@ Create a repeatable, measurable paid search channel that:
 Every campaign splits:
 - `Bay Area Deck - Residential`
 - `Bay Area Deck - Commercial`
-- etc.
 
 ### Ad Group Structure
 
