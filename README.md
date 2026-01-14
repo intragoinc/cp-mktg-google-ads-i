@@ -38,6 +38,7 @@ This repository contains the complete documentation, campaign architecture, and 
 │   ├── 04_xx_*             # SEO alignment
 │   ├── campaign-master-*   # Campaign structure CSVs
 │   ├── lp-spec-*           # Landing page specifications
+│   ├── _archive/           # Superseded documents
 │   └── README.mdx          # Documentation table of contents
 ├── project-summary.md       # Project overview
 ├── project-plan.md          # Implementation plan with estimates
@@ -68,3 +69,12 @@ This repository contains the complete documentation, campaign architecture, and 
 ### Quality & Launch
 - [QA Matrix](./docs/03_07_qa-matrix.md)
 - [Risks & Assumptions](./docs/03_06_risks-assumptions.md)
+
+## Related Repositories
+
+| Repository | Relationship |
+|------------|--------------|
+| `cp-web` | Landing page implementation |
+| `cp-web-analytics` | UTM standards and tracking |
+| `cp-sfdc-analytics` | Lead attribution reporting |
+| `cp-content` | Ad copy and messaging alignment |
