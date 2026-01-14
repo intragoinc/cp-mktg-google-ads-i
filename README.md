@@ -16,8 +16,6 @@ This repository contains the complete documentation, campaign architecture, and 
 |----------|-------------|
 | [Project Summary](./project-summary.md) | High-level overview of the initiative |
 | [Project Plan](./project-plan.md) | Implementation plan with time estimates |
-| [Project Plan (ClickUp CSV)](./project-plan-clickup.csv) | Task list for import into ClickUp |
-| [Project Plan (Trello CSV)](./project-plan-trello.csv) | Task list for import into Trello |
 | [Docs Table of Contents](./docs/README.mdx) | Full documentation index |
 
 ## Services Covered
@@ -42,9 +40,7 @@ This repository contains the complete documentation, campaign architecture, and 
 │   ├── _archive/           # Superseded documents
 │   └── README.mdx          # Documentation table of contents
 ├── project-summary.md       # Project overview
-├── project-plan.md          # Implementation plan with estimates
-├── project-plan-clickup.csv # ClickUp import file
-└── project-plan-trello.csv  # Trello import file
+└── project-plan.md          # Implementation plan with estimates
 ```
 
 ## Team
