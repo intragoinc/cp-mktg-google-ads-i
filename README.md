@@ -17,6 +17,7 @@ This repository contains the complete documentation, campaign architecture, and 
 | [Project Summary](./project-summary.md) | High-level overview of the initiative |
 | [Project Plan](./project-plan.md) | Implementation plan with time estimates |
 | [Project Plan (ClickUp CSV)](./project-plan-clickup.csv) | Task list for import into ClickUp |
+| [Project Plan (Trello CSV)](./project-plan-trello.csv) | Task list for import into Trello |
 | [Docs Table of Contents](./docs/README.mdx) | Full documentation index |
 
 ## Services Covered
@@ -42,7 +43,8 @@ This repository contains the complete documentation, campaign architecture, and 
 │   └── README.mdx          # Documentation table of contents
 ├── project-summary.md       # Project overview
 ├── project-plan.md          # Implementation plan with estimates
-└── project-plan-clickup.csv # ClickUp import file
+├── project-plan-clickup.csv # ClickUp import file
+└── project-plan-trello.csv  # Trello import file
 ```
 
 ## Team
@@ -69,6 +71,9 @@ This repository contains the complete documentation, campaign architecture, and 
 ### Quality & Launch
 - [QA Matrix](./docs/03_07_qa-matrix.md)
 - [Risks & Assumptions](./docs/03_06_risks-assumptions.md)
+
+### Maintenance
+- [Style Guide](./docs/STYLE-GUIDE.md)
 
 ## Related Repositories
 
