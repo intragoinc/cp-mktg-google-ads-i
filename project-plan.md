@@ -39,7 +39,7 @@
 |------|-------|-------|-----------|------------|--------------|--------|
 | Kickoff meeting - align on scope, URLs, timeline | | All | 0.75 | 1.5 | 0 | Not Started |
 | Confirm LP URL structure with Web | `/residential/deck/`, etc. | Brent + Web | 0.75 | 1.5 | 0 | Not Started |
-| Confirm Salesforce field mapping with SFDC dev | Review `03_04_web-php-sfdc-field-contract.md` | Brent + SFDC | 0.75 | 2.25 | 0 | Not Started |
+| Confirm Salesforce field mapping with SFDC dev | Review [Web-PHP-SFDC Field Contract](https://github.com/intragoinc/cp-google-ads/wiki/03-Web-PHP-SFDC-Field-Contract) | Brent + SFDC | 0.75 | 2.25 | 0 | Not Started |
 | Set up Google Ads conversion tracking (verify) | Confirm existing tracking works | Aksha | 0.75 | 1.5 | 0 | Not Started |
 
 **Subtotal: 3-7 hours**
@@ -51,12 +51,12 @@
 | Task | Notes | Owner | Low (hrs) | High (hrs) | Actual (hrs) | Status |
 |------|-------|-------|-----------|------------|--------------|--------|
 | Create Elementor global components (hero, form, process, CTA) | Reusable across all LPs | Web | 3 | 6 | 0 | Not Started |
-| Build estimate request form with hidden UTM fields | Per `02_17_lp-spec.md` | Web | 1.5 | 3 | 0 | Not Started |
-| Build LP: `/residential/deck/` | From `02_08_lp-deck-residential.md` | Web | 1.5 | 3 | 0 | Not Started |
-| Build LP: `/residential/siding/` | From `02_10_lp-siding-residential.md` | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build estimate request form with hidden UTM fields | Per [LP Spec](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Spec) | Web | 1.5 | 3 | 0 | Not Started |
+| Build LP: `/residential/deck/` | From [LP Deck Residential](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Deck-Residential) | Web | 1.5 | 3 | 0 | Not Started |
+| Build LP: `/residential/siding/` | From [LP Siding Residential](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Siding-Residential) | Web | 1.5 | 2.25 | 0 | Not Started |
 | Build LP: `/residential/wood-structures/` | | Web | 1.5 | 2.25 | 0 | Not Started |
-| Build LP: `/residential/pressure/` | From `02_12_lp-pressure-residential.md` | Web | 1.5 | 2.25 | 0 | Not Started |
-| Build LP: `/residential/` (catch-all) | From `02_14_lp-exteriorwood-residential.md` | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build LP: `/residential/pressure/` | From [LP Pressure Residential](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Pressure-Residential) | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build LP: `/residential/` (catch-all) | From [LP ExteriorWood Residential](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-ExteriorWood-Residential) | Web | 1.5 | 2.25 | 0 | Not Started |
 | Mobile optimization & QA | Lighthouse 80+ target | Web | 1.5 | 3 | 0 | Not Started |
 | Thank-you page setup | | Web | 0.75 | 1.5 | 0 | Not Started |
 
@@ -99,7 +99,7 @@
 
 | Task | Notes | Owner | Low (hrs) | High (hrs) | Actual (hrs) | Status |
 |------|-------|-------|-----------|------------|--------------|--------|
-| End-to-end test: Ad → LP → Form → SFDC | Per `03_07_qa-matrix.md` | All | 1.5 | 3 | 0 | Not Started |
+| End-to-end test: Ad → LP → Form → SFDC | Per [QA Matrix](https://github.com/intragoinc/cp-google-ads/wiki/03-QA-Matrix) | All | 1.5 | 3 | 0 | Not Started |
 | Test each surface LP (5 tests) | Verify lead appears with correct data | Web + SFDC | 0.75 | 1.5 | 0 | Not Started |
 | Fix any issues found | Buffer for fixes | Varies | 1.5 | 6 | 0 | Not Started |
 | Final review and approval | | Brent | 0.75 | 1.5 | 0 | Not Started |
@@ -203,11 +203,11 @@
 
 | Task | Notes | Owner | Low (hrs) | High (hrs) | Actual (hrs) | Status |
 |------|-------|-------|-----------|------------|--------------|--------|
-| Build LP: `/commercial/deck/` | From `02_09_lp-deck-commercial.md` | Web | 1.5 | 3 | 0 | Not Started |
-| Build LP: `/commercial/siding/` | From `02_11_lp-siding-commercial.md` | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build LP: `/commercial/deck/` | From [LP Deck Commercial](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Deck-Commercial) | Web | 1.5 | 3 | 0 | Not Started |
+| Build LP: `/commercial/siding/` | From [LP Siding Commercial](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Siding-Commercial) | Web | 1.5 | 2.25 | 0 | Not Started |
 | Build LP: `/commercial/wood-structures/` | | Web | 1.5 | 2.25 | 0 | Not Started |
-| Build LP: `/commercial/pressure/` | From `02_13_lp-pressure-commercial.md` | Web | 1.5 | 2.25 | 0 | Not Started |
-| Build LP: `/commercial/` (catch-all) | From `02_15_lp-exteriorwood-commercial.md` | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build LP: `/commercial/pressure/` | From [LP Pressure Commercial](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-Pressure-Commercial) | Web | 1.5 | 2.25 | 0 | Not Started |
+| Build LP: `/commercial/` (catch-all) | From [LP ExteriorWood Commercial](https://github.com/intragoinc/cp-google-ads/wiki/02-LP-ExteriorWood-Commercial) | Web | 1.5 | 2.25 | 0 | Not Started |
 | Update CTA to "Request a Proposal" on commercial LPs | | Web | 0.75 | 1.5 | 0 | Not Started |
 | Mobile optimization & QA | | Web | 1.5 | 3 | 0 | Not Started |
 
@@ -249,7 +249,7 @@
 | Test all residential campaign → LP paths | 5 surfaces × 2 geos | All | 0.75 | 1.5 | 0 | Not Started |
 | Test all commercial campaign → LP paths | 5 surfaces × 2 geos | All | 0.75 | 1.5 | 0 | Not Started |
 | Verify CTA differences (Estimate vs Proposal) | | Web | 0.5 | 0.75 | 0 | Not Started |
-| End-to-end SFDC lead tests (6 variations) | Per `03_07_qa-matrix.md` | SFDC | 0.75 | 1.5 | 0 | Not Started |
+| End-to-end SFDC lead tests (6 variations) | Per [QA Matrix](https://github.com/intragoinc/cp-google-ads/wiki/03-QA-Matrix) | SFDC | 0.75 | 1.5 | 0 | Not Started |
 | Fix any issues | | Varies | 1.5 | 4.5 | 0 | Not Started |
 | Final review and approval | | Brent | 0.75 | 1.5 | 0 | Not Started |
 | Go live Phase 3 | | Aksha | 0.5 | 0.75 | 0 | Not Started |
@@ -332,4 +332,4 @@
 - Photography: Build LPs with existing images, swap in new assets when available
 - Google Ads: Replacing existing campaigns means historical data helps learning period
 - Salesforce: Web-to-lead exists, just need UTM field additions
-- All documentation exists in `/docs/` folder for reference
+- All documentation is in the [wiki](https://github.com/intragoinc/cp-google-ads/wiki)
