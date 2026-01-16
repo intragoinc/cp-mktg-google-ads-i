@@ -1,0 +1,20 @@
+Campaign report
+All time
+Campaign status,Campaign,Budget,Budget name,Budget type,Status,Status reasons,Campaign type,Impr.,Interactions,Interaction rate,Currency code,Avg. cost,Cost,Search lost IS (budget),Avg. CPC,Search lost IS (rank),Search impr. share,Optimization score,Bid strategy type,Clicks,Conv. rate,Conversions,Cost / conv.
+Paused,Leads-Smart-4,4.00, --,Daily,Paused,campaign paused; unknown,Display,"795,836","9,265",1.16%,USD,0.29,2691.41, --,0.29, --, --, --,Maximize Conversions,"9,265",0.24%,22.00,122.34
+Paused,"Deck, siding & other_Remarketing_RSL",10.00, --,Daily,Paused,campaign paused; most ads disapproved,Display,"2,472,851","9,813",0.40%,USD,0.34,3296.57, --,0.34, --, --, --,Maximize Conversions,"9,813",0.14%,14.00,235.47
+Paused,"Deck, siding & other_Mobile_RSL",3.00, --,Daily,Paused,campaign paused; some ads limited by policy,Search,"244,482","3,316",1.36%,USD,2.20,7298.62,4.28%,2.20,> 90%,< 10%, --,Maximize Conversions (Target CPA),"3,316",12.91%,428.20,17.04
+Enabled,Bay Area Exterior Wood (<2025),5.00, --,Daily,Not eligible,No ad agroups; unknown,Search,"1,356,884","22,942",1.69%,USD,2.19,50252.14,25.38%,2.19,63.38%,11.24%, --,Maximize Conversions,"22,942",21.18%,"4,838.80",10.33
+Paused,Bay Area Residential Siding,30.00, --,Campaign Total,Paused,campaign paused; unknown,Search,50,2,4.00%,USD,0.65,1.30,54.37%,0.65,45.32%,< 10%, --,Maximize Conversion Value,2,0.00%,0.00,0.00
+Enabled,Bay Area Deck and Siding (<2025),75.00, --,Daily,Eligible (Limited),search volume limited; unknown,Search,"1,024,071","66,168",6.46%,USD,1.57,103606.77,24.95%,1.57,64.58%,10.48%,63.66,Maximize Conversions (Target CPA),"66,168",7.22%,"4,778.99",21.68
+Paused,All-In-One Performance Max,5.00, --,Daily,Paused,campaign paused; most asset groups limited by policy,Performance Max,"244,281","120,475",49.32%,USD,0.09,11381.19,8.09%,2.43,81.47%,10.44%, --,Maximize Conversions (Target CPA),"4,687",0.24%,295.00,38.58
+Enabled,Bay Area Fence and Furniture (<2025),9.00, --,Daily,Eligible,unknown,Search,"202,923","6,803",3.35%,USD,1.23,8355.77,36.84%,1.23,59.12%,< 10%,98.66,Maximize Conversions,"6,803",7.43%,505.33,16.54
+Paused,Bay Area Residential Deck- 11th Jan,30.00, --,Daily,Paused,campaign paused; unknown,Search,0,0, --,USD,0,0.00, --,0, --, --, --,Maximize Conversion Value,0,0.00%,0.00,0.00
+Paused,Fringe Deck and Siding (<2025),5.00, --,Daily,Paused,campaign paused; unknown,Search,"101,873","2,969",2.91%,USD,0.87,2580.86,30.25%,0.87,62.60%,< 10%, --,Maximize Conversions,"2,969",2.69%,80.00,32.26
+Paused,Intent Campaign,5.00, --,Daily,Paused,campaign paused; unknown,Display,"4,734,175","33,451",0.71%,USD,0.16,5185.25, --,0.16, --, --, --,Maximize Conversions,"33,451",23.02%,"7,699.00",0.67
+Paused,"Deck, siding & other_Display_RSL",10.00, --,Daily,Paused,campaign paused; most ads disapproved,Display,"2,939,887","8,323",0.28%,USD,0.57,4771.27, --,0.57, --, --, --,Maximize Conversions,"8,323",0.50%,42.00,113.60
+Total: Campaigns, --, --, --, --, --,, --,"14,117,313","283,527",2.01%,USD,0.70,199421.15,20.53%,1.19,71.01%,< 10%, --, --,"167,739",6.60%,"18,703.32",10.65
+Total: Account,,,,,,,,"14,122,564","283,651",2.01%,USD,0.70,199547.59,20.54%,1.19,71.01%,< 10%,,,"167,863",6.60%,"18,704.32",10.65
+Total: Performance Max,,,,,,,Performance Max,"244,281","120,475",49.32%,USD,0.09,11381.19,8.09%,2.43,81.47%,10.44%,,,"4,687",0.24%,295.00,38.58
+Total: Search,,,,,,,Search,"2,935,534","102,324",3.49%,USD,1.68,172221.89,20.77%,1.68,70.81%,< 10%,,,"102,324",10.40%,"10,632.32",16.17
+Total: Display,,,,,,,Display,"10,942,749","60,852",0.56%,USD,0.26,15944.51, --,0.26, --, --,,,"60,852",12.78%,"7,777.00",2.05
