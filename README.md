@@ -4,14 +4,14 @@ A structured, multi-phase Google Ads demand generation system for Cal Preserving
 
 ## Documentation
 
-**All documentation is in the wiki:** [cp-google-ads Wiki](https://github.com/intragoinc/cp-google-ads/wiki)
+**All documentation is in the wiki:** [cp-mktg-google-ads Wiki](https://github.com/intragoinc/cp-mktg-google-ads/wiki)
 
 ## Quick Links
 
 | Resource | Description |
 |----------|-------------|
-| [Wiki Home](https://github.com/intragoinc/cp-google-ads/wiki) | Full documentation index |
-| [Phase 0.5 Launch Guide](https://github.com/intragoinc/cp-google-ads/wiki/Campaign-Master-Phase-0.5) | Current launch configuration |
+| [Wiki Home](https://github.com/intragoinc/cp-mktg-google-ads/wiki) | Full documentation index |
+| [Phase 0.5 Launch Guide](https://github.com/intragoinc/cp-mktg-google-ads/wiki/Campaign-Master-Phase-0.5) | Current launch configuration |
 | [Project Summary](./project-summary.md) | High-level overview |
 | [Project Plan](./project-plan.md) | Implementation plan with GitHub issues |
 
@@ -64,6 +64,6 @@ A structured, multi-phase Google Ads demand generation system for Cal Preserving
 | Repository | Relationship |
 |------------|--------------|
 | `cp-web` | Landing page implementation |
-| `cp-web-analytics` | UTM standards and tracking |
+| `cp-mktg-web-analytics` | UTM standards and tracking |
 | `cp-sfdc-analytics` | Lead attribution reporting |
-| `cp-content` | Ad copy and messaging alignment |
+| `cp-mktg-content` | Ad copy and messaging alignment |
