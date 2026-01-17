@@ -7,12 +7,19 @@
 
 set -e
 
-# Get the repo root directory
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SNAPSHOTS_DIR="$REPO_ROOT/snapshots"
+# Snapshots live in client repo (sibling to this internal repo)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CLIENT_REPO="$(cd "$SCRIPT_DIR/../../cp-mktg-google-ads" && pwd)"
+SNAPSHOTS_DIR="$CLIENT_REPO/snapshots"
+
+if [ ! -d "$SNAPSHOTS_DIR" ]; then
+    echo "Error: Snapshots directory not found at $SNAPSHOTS_DIR"
+    exit 1
+fi
 
 echo "Google Ads Account Snapshots"
 echo "============================"
+echo "Location: $SNAPSHOTS_DIR"
 echo ""
 
 for dir in $(ls -1d "$SNAPSHOTS_DIR"/[0-9]* 2>/dev/null | sort -r); do

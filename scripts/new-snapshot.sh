@@ -5,16 +5,23 @@
 # Usage: ./scripts/new-snapshot.sh [DATE] [CAPTURED_BY]
 #
 # Examples:
-#   ./scripts/new-snapshot.sh                    # Uses today's date and prompts for name
+#   ./scripts/new-snapshot.sh                    # Uses today's date and git user
 #   ./scripts/new-snapshot.sh 2026-01-23         # Uses specified date
 #   ./scripts/new-snapshot.sh 2026-01-23 aksha-intrago
 #
 
 set -e
 
-# Get the repo root directory
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SNAPSHOTS_DIR="$REPO_ROOT/snapshots"
+# Snapshots live in client repo (sibling to this internal repo)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CLIENT_REPO="$(cd "$SCRIPT_DIR/../../cp-mktg-google-ads" && pwd)"
+SNAPSHOTS_DIR="$CLIENT_REPO/snapshots"
+
+if [ ! -d "$CLIENT_REPO" ]; then
+    echo "Error: Client repo not found at $CLIENT_REPO"
+    echo "Expected sibling directory: cp-mktg-google-ads"
+    exit 1
+fi
 
 # Get date (default to today)
 DATE="${1:-$(date +%Y-%m-%d)}"
@@ -60,4 +67,4 @@ echo "   - campaign-report.csv"
 echo ""
 echo "3. Update metadata.json with notes and file list"
 echo "4. Run: ./scripts/update-latest.sh"
-echo "5. Commit and push changes"
+echo "5. cd $CLIENT_REPO && git add snapshots/ && git commit && git push"
