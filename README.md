@@ -1,69 +1,75 @@
-# Cal Preserving — Google Ads Initiative
+# Cal Preserving — Google Ads Initiative (Internal)
 
-A structured, multi-phase Google Ads demand generation system for Cal Preserving, a Bay Area exterior wood preservation and restoration company.
+Internal Intrago repository for Google Ads initiative tooling and implementation guides.
 
-## Documentation
+**Client repo:** [cp-mktg-google-ads](https://github.com/intragoinc/cp-mktg-google-ads)
 
-**All documentation is in the wiki:** [cp-mktg-google-ads Wiki](https://github.com/intragoinc/cp-mktg-google-ads/wiki)
-
-## Quick Links
-
-| Resource | Description |
-|----------|-------------|
-| [Wiki Home](https://github.com/intragoinc/cp-mktg-google-ads/wiki) | Full documentation index |
-| [Phase 0.5 Launch Guide](https://github.com/intragoinc/cp-mktg-google-ads/wiki/Campaign-Master-Phase-0.5) | Current launch configuration |
-| [Project Summary](./project-summary.md) | High-level overview |
-| [Project Plan](./project-plan.md) | Implementation plan with GitHub issues |
-
-## Phases
-
-- **Phase 0.5:** Simplified launch (1 ad group per campaign) — *Current*
-- **Phase 1:** Bay Area only, residential-focused campaigns
-- **Phase 2:** Bay Area + Fringe geographies
-- **Phase 3:** Full Residential vs Commercial persona split
+---
 
 ## Repository Structure
 
 ```
 /
-├── docs/                           # Data files only
-│   ├── campaign-master-phase-*.csv # Campaign structure by phase
-│   ├── *-mapping.csv               # Field and URL mappings
-│   ├── *.json                      # Reporting specs
-│   ├── *.html                      # LP wireframes
-│   └── prompt-*.md                 # AI prompts
-├── project-summary.md              # Project overview
-└── project-plan.md                 # Implementation plan
+├── scripts/
+│   ├── create-github-project.sh   # Bulk create GitHub issues from plan
+│   ├── new-snapshot.sh            # Create snapshot folder in client repo
+│   ├── update-latest.sh           # Update latest symlink
+│   └── list-snapshots.sh          # List all snapshots with metadata
+└── README.md
 ```
 
-## Data Files
+---
 
-| File | Description |
-|------|-------------|
-| [campaign-master-phase-0.5.csv](./docs/campaign-master-phase-0.5.csv) | Phase 0.5 campaigns (current) |
-| [campaign-master-phase-1.csv](./docs/campaign-master-phase-1.csv) | Phase 1 campaigns |
-| [campaign-master-phase-2.csv](./docs/campaign-master-phase-2.csv) | Phase 2 campaigns |
-| [campaign-master-phase-3.csv](./docs/campaign-master-phase-3.csv) | Phase 3 campaigns |
-| [campaign-ad-group-keywords-negatives.csv](./docs/campaign-ad-group-keywords-negatives.csv) | Keywords and negatives |
-| [03_01_sfdc-mapping.csv](./docs/03_01_sfdc-mapping.csv) | Salesforce field mapping |
-| [03_02_reporting-spec.json](./docs/03_02_reporting-spec.json) | Reporting specification |
-| [lp-url-mapping-phase-2.csv](./docs/lp-url-mapping-phase-2.csv) | LP URLs for Phase 2 |
-| [lp-url-mapping-phase-3.csv](./docs/lp-url-mapping-phase-3.csv) | LP URLs for Phase 3 |
+## Internal Wiki
 
-## Team
+Implementation guides and SOPs for Intrago team:
 
-| Role | Responsibility |
-|------|----------------|
-| Lead | Oversight, approvals, business decisions |
-| Marketing | Google Ads campaigns, keywords, RSAs, optimization |
-| Web | Landing pages, forms, tracking |
-| Salesforce | Field mapping, UTM capture, reporting |
+| Guide | Description |
+|-------|-------------|
+| [Implementation Guide - Phase 0.5](https://github.com/intragoinc/cp-mktg-google-ads-i/wiki/Implementation-Guide-Phase-0.5) | Current launch phase |
+| [Implementation Guide - Phase 1](https://github.com/intragoinc/cp-mktg-google-ads-i/wiki/Implementation-Guide-Phase-1) | Bay Area with landing pages |
+| [Implementation Guide - Phase 2](https://github.com/intragoinc/cp-mktg-google-ads-i/wiki/Implementation-Guide-Phase-2) | Fringe geography expansion |
+| [Implementation Guide - Phase 3](https://github.com/intragoinc/cp-mktg-google-ads-i/wiki/Implementation-Guide-Phase-3) | Residential vs Commercial split |
 
-## Related Repositories
+---
 
-| Repository | Relationship |
-|------------|--------------|
-| `cp-web` | Landing page implementation |
-| `cp-mktg-web-analytics` | UTM standards and tracking |
-| `cp-sfdc-analytics` | Lead attribution reporting |
-| `cp-mktg-content` | Ad copy and messaging alignment |
+## Scripts
+
+### Snapshot Scripts
+
+Scripts run from this repo but write data to the client repo:
+
+```bash
+# Create new snapshot folder
+./scripts/new-snapshot.sh 2026-01-17 your-username
+
+# Update latest symlink
+./scripts/update-latest.sh
+
+# List all snapshots
+./scripts/list-snapshots.sh
+```
+
+Then commit data in client repo:
+```bash
+cd ../cp-mktg-google-ads
+git add snapshots/ && git commit -m "Add snapshot" && git push
+```
+
+### Project Setup
+
+```bash
+# Bulk create GitHub project and issues
+./scripts/create-github-project.sh
+```
+
+---
+
+## What Lives Where
+
+| Content | Location |
+|---------|----------|
+| Data files (CSVs, snapshots) | Client repo |
+| Issues & Projects | Client repo |
+| Implementation guides | Internal wiki (-i) |
+| Scripts | Internal repo (-i) |
