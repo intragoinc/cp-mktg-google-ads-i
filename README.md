@@ -4,6 +4,8 @@ Internal Intrago repository for Google Ads initiative tooling and implementation
 
 **Client repo:** [cp-mktg-google-ads](https://github.com/intragoinc/cp-mktg-google-ads)
 
+**Client wiki:** [cp-mktg-google-ads/wiki](https://github.com/intragoinc/cp-mktg-google-ads/wiki) — Project overview, scope, and client-facing documentation
+
 ---
 
 ## Repository Structure
