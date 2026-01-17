@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Create GitHub Project and Issues from project-plan.md
-# Repository: intragoinc/cp-google-ads
+# Repository: intragoinc/cp-mktg-google-ads
 
-REPO="intragoinc/cp-google-ads"
+REPO="intragoinc/cp-mktg-google-ads"
 PROJECT_TITLE="Google Ads Initiative (Phases 1-3)"
 
 echo "=== Creating GitHub Project: $PROJECT_TITLE ==="
@@ -211,4 +211,4 @@ echo ""
 echo "=== Done ==="
 echo ""
 echo "View your project at: https://github.com/users/intragoinc/projects/"
-echo "View issues at: https://github.com/intragoinc/cp-google-ads/issues"
+echo "View issues at: https://github.com/intragoinc/cp-mktg-google-ads/issues"
